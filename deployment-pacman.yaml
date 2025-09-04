@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pacman-game
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pacman-game
+  template:
+    metadata:
+      labels:
+        app: pacman-game
+    spec:
+      containers:
+        - name: pacman
+          image: dbafromthecold/pac-man
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"

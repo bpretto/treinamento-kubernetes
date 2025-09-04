@@ -4,7 +4,7 @@ metadata:
   name: exemplo-service
 spec:
   selector:
-    app: nginx
+    app: pacman-game
   ports:
     - protocol: TCP
       port: 80
